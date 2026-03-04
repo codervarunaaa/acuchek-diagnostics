@@ -757,8 +757,10 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
   border-color: var(--sage-green-light);
+  box-shadow:
+    0 14px 40px rgba(44, 122, 123, 0.28),
+    0 0 0 1px rgba(183, 211, 196, 0.8);
 }
 
 .service-card:hover::before {
@@ -779,12 +781,13 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
 }
 
 .service-card:hover .service-icon {
-  background: var(--teal);
+  background: linear-gradient(135deg, var(--teal), var(--teal-light));
   transform: scale(1.05);
 }
 
 .service-card:hover .service-icon svg {
   color: var(--white);
+  stroke: var(--white);
 }
 
 .service-card h3 {
@@ -796,6 +799,278 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.7;
+}
+
+/* ---------- TESTS / POPULAR HEALTH CHECKS ---------- */
+.tests {
+  padding: 90px 0;
+  background: var(--white);
+}
+
+.tests-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.tests-highlight h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.tests-highlight p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.tests-highlight a {
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.tests-highlight a:hover {
+  text-decoration: underline;
+}
+
+.tests-benefits {
+  margin: 8px 0 12px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.tests-benefits li {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  padding: 4px 0 4px 20px;
+  position: relative;
+}
+
+.tests-benefits li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font-size: 0.8rem;
+  color: var(--teal);
+}
+
+.tests-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.tests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.test-card {
+  background: var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all var(--transition);
+}
+
+.test-card:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  border-color: var(--sage-green);
+  transform: translateY(-3px);
+}
+
+.test-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(44, 122, 123, 0.08);
+  color: var(--teal-dark);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.test-card h3 {
+  font-size: 0.98rem;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.test-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.test-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+.test-meta span {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  color: var(--text-secondary);
+}
+
+.test-card .test-details-btn {
+  margin-top: 8px;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  padding-inline: 18px;
+}
+
+/* Test modal */
+.test-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.test-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.test-modal {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 26px 26px 24px;
+  width: 100%;
+  max-width: 720px;
+  position: relative;
+}
+
+.test-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.test-modal-close:hover {
+  color: var(--charcoal);
+  transform: rotate(4deg);
+}
+
+.test-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.test-modal-header h3 {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.test-modal-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.test-modal-tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--sage-green-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  white-space: nowrap;
+}
+
+.test-modal-description {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.test-modal-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.test-modal-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.test-modal-info li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding: 5px 0;
+}
+
+.test-modal-info strong {
+  font-weight: 600;
+}
+
+.test-modal-pricing {
+  padding: 14px 14px 12px;
+  border-radius: var(--radius-lg);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.test-modal-price-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.test-modal-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.test-modal-disclaimer {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.test-modal-cta {
+  margin-top: 6px;
+  justify-content: center;
+  width: 100%;
 }
 
 /* ---------- FEATURES / WHY CHOOSE US ---------- */
@@ -1165,6 +1440,10 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
   }
   .about-visual { order: -1; }
 
+  .tests-layout {
+    grid-template-columns: 1fr;
+  }
+
   .features-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1216,6 +1495,15 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
   }
 
   .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .test-modal {
+    max-width: 95%;
+    padding: 22px 18px 20px;
+  }
+
+  .test-modal-content {
     grid-template-columns: 1fr;
   }
 

@@ -145,4 +145,158 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
+  // ---------- Test details modal ----------
+  const TEST_DETAILS = {
+    cbc: {
+      title: 'Complete Blood Count (CBC)',
+      subtitle: 'Baseline health screening • Infection • Anemia',
+      category: 'Hematology',
+      description: 'A complete blood count evaluates red cells, white cells, and platelets to screen for anemia, infections, inflammation, and certain blood disorders.',
+      sample: 'EDTA whole blood',
+      fasting: 'No fasting required',
+      idealFor: 'Routine health check, fatigue, fever, suspected infections, anemia screening',
+      tat: 'Reports typically available within 12 hours',
+      prep: 'Avoid strenuous exercise and heavy meals just before sample collection, if possible.',
+      minPrice: 250,
+      maxPrice: 450,
+    },
+    hba1c: {
+      title: 'HbA1c (Glycated Hemoglobin)',
+      subtitle: 'Average sugar control over 3 months',
+      category: 'Diabetes Care',
+      description: 'HbA1c reflects your average blood glucose control over the last 2–3 months and helps in diagnosing and monitoring diabetes.',
+      sample: 'Whole blood',
+      fasting: 'No fasting required',
+      idealFor: 'Known diabetics, high fasting sugars, strong family history of diabetes',
+      tat: 'Same day reporting in most cases',
+      prep: 'No special preparation needed. Continue regular medicines unless advised otherwise by your doctor.',
+      minPrice: 450,
+      maxPrice: 750,
+    },
+    thyroid: {
+      title: 'Thyroid Profile (T3, T4, TSH)',
+      subtitle: 'Thyroid balance • Weight • Energy',
+      category: 'Hormone Profile',
+      description: 'A three‑parameter thyroid panel (T3, T4, TSH) to screen for hypo‑ or hyper‑thyroidism and to monitor ongoing thyroid treatment.',
+      sample: 'Serum',
+      fasting: 'Fasting preferred (8–10 hours), but not mandatory',
+      idealFor: 'Weight changes, hair loss, fatigue, menstrual irregularities, thyroid medication monitoring',
+      tat: 'Reports available within 24 hours',
+      prep: 'Inform your doctor about any thyroid medications or supplements you are taking.',
+      minPrice: 600,
+      maxPrice: 1100,
+    },
+    lft: {
+      title: 'Liver Function Test (LFT)',
+      subtitle: 'Liver enzymes • Jaundice • Medication monitoring',
+      category: 'Biochemistry',
+      description: 'A panel of liver enzymes and proteins used to assess overall liver health, detect damage, and monitor the effect of medicines on the liver.',
+      sample: 'Serum',
+      fasting: '10–12 hours fasting recommended',
+      idealFor: 'Jaundice, abdominal discomfort, long‑term medications, fatty liver, alcohol use',
+      tat: 'Reports usually available within 24 hours',
+      prep: 'Avoid alcohol for at least 24 hours prior to testing, unless otherwise advised.',
+      minPrice: 500,
+      maxPrice: 950,
+    },
+    lipid: {
+      title: 'Lipid Profile',
+      subtitle: 'Cholesterol • Triglycerides • Heart risk',
+      category: 'Cardiac Risk',
+      description: 'Measures total cholesterol, HDL (good cholesterol), LDL (bad cholesterol), and triglycerides to estimate your risk for heart disease.',
+      sample: 'Serum',
+      fasting: '12 hours fasting strongly recommended',
+      idealFor: 'Routine preventive check‑ups, diabetes, hypertension, overweight, family history of heart disease',
+      tat: 'Reports within 12–24 hours',
+      prep: 'Overnight fasting with only water allowed; avoid heavy fatty meals the previous night.',
+      minPrice: 550,
+      maxPrice: 1200,
+    },
+    vitd: {
+      title: 'Vitamin D (25‑OH)',
+      subtitle: 'Bone health • Immunity • Fatigue',
+      category: 'Vitamin Profile',
+      description: 'Measures 25‑OH Vitamin D levels which are crucial for bone strength, immunity, and overall well‑being.',
+      sample: 'Serum',
+      fasting: 'Fasting not mandatory',
+      idealFor: 'Bone pains, frequent fractures, fatigue, limited sun exposure, elderly, post‑menopausal women',
+      tat: 'Reports within 24–36 hours',
+      prep: 'No special preparation required. Inform your doctor about any Vitamin D supplements.',
+      minPrice: 900,
+      maxPrice: 1800,
+    },
+  };
+
+  const modalBackdrop = document.getElementById('testModal');
+  const modalClose = document.getElementById('testModalClose');
+
+  const titleEl = document.getElementById('testModalTitle');
+  const subtitleEl = document.getElementById('testModalSubtitle');
+  const categoryEl = document.getElementById('testModalCategory');
+  const descEl = document.getElementById('testModalDescription');
+  const sampleEl = document.getElementById('testModalSample');
+  const fastingEl = document.getElementById('testModalFasting');
+  const idealForEl = document.getElementById('testModalIdealFor');
+  const tatEl = document.getElementById('testModalTat');
+  const prepEl = document.getElementById('testModalPrep');
+  const priceEl = document.getElementById('testModalPrice');
+
+  const openTestModal = (testId) => {
+    const test = TEST_DETAILS[testId];
+    if (!test || !modalBackdrop) return;
+
+    titleEl.textContent = test.title;
+    subtitleEl.textContent = test.subtitle;
+    categoryEl.textContent = test.category;
+    descEl.textContent = test.description;
+    sampleEl.textContent = test.sample;
+    fastingEl.textContent = test.fasting;
+    idealForEl.textContent = test.idealFor;
+    tatEl.textContent = test.tat;
+    prepEl.textContent = test.prep;
+
+    const price =
+      test.minPrice +
+      Math.floor(Math.random() * (test.maxPrice - test.minPrice + 1));
+    priceEl.textContent = `₹ ${price.toLocaleString('en-IN')}`;
+
+    modalBackdrop.classList.add('open');
+    modalBackdrop.setAttribute('aria-hidden', 'false');
+    // Simple focus management
+    modalClose?.focus();
+  };
+
+  const closeTestModal = () => {
+    if (!modalBackdrop) return;
+    modalBackdrop.classList.remove('open');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+  };
+
+  document.querySelectorAll('.test-details-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const testId = btn.getAttribute('data-test-id');
+      if (testId) {
+        openTestModal(testId);
+      }
+    });
+  });
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeTestModal);
+  }
+
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) {
+        closeTestModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop?.classList.contains('open')) {
+      closeTestModal();
+    }
+  });
+
 });

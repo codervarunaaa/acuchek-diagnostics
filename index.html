@@ -23,6 +23,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#tests">Lab Tests</a>
         <a href="#features">Why Us</a>
         <a href="#contact">Contact</a>
         <a href="tel:+919226837873" class="nav-cta">Book a Test</a>
@@ -107,10 +108,6 @@
             <div class="about-icon-item"><div class="icon">🧪</div><div class="label">Biochemistry</div></div>
             <div class="about-icon-item"><div class="icon">❤️</div><div class="label">Cardiac</div></div>
           </div>
-        </div>
-        <div class="about-accent-card">
-          <div class="number">QA</div>
-          <div class="text">CMC Vellore Certified</div>
         </div>
       </div>
       <div class="about-content fade-up">
@@ -224,6 +221,117 @@
           </div>
           <h3>Histopathology &amp; Cytology</h3>
           <p>Tissue biopsy examination and cytological studies for accurate diagnosis of lesions and abnormalities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTS / POPULAR HEALTH CHECKS ========== -->
+  <section class="tests" id="tests">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Health Checks &amp; Lab Tests</span>
+        <h2 class="section-title">Book Popular Tests &amp; Profiles</h2>
+        <p class="section-subtitle">
+          Choose from doctor-recommended tests and full body health checks. View requirements, sample type, and pricing before you book.
+        </p>
+      </div>
+
+      <div class="tests-layout">
+        <div class="tests-highlight fade-up">
+          <h3>Smart reports, clear guidance</h3>
+          <p>
+            Just like leading digital-health platforms such as <a href="https://www.mfine.co/" target="_blank" rel="noopener">MFine</a>, we combine
+            at-lab precision with at-home convenience — transparent pricing, clear preparation instructions, and fast digital reports.
+          </p>
+          <ul class="tests-benefits">
+            <li>Smart, doctor-verified reports with reference ranges</li>
+            <li>Sample collection at lab; home collection available on request</li>
+            <li>Most reports ready within 12–24 hours</li>
+          </ul>
+          <p class="tests-note">
+            Tap on any test card to see a descriptive overview, sample requirements, fasting instructions, and current pricing in INR.
+          </p>
+        </div>
+
+        <div class="tests-grid fade-up">
+          <article class="test-card">
+            <div class="test-tag">Most booked</div>
+            <h3>Complete Blood Count (CBC)</h3>
+            <p>Screen for anemia, infections, and blood disorders in a single, essential panel.</p>
+            <div class="test-meta">
+              <span>Sample: EDTA blood</span>
+              <span>Report: 12 hrs</span>
+            </div>
+            <button class="btn btn-outline test-details-btn" data-test-id="cbc">
+              View details &amp; pricing
+            </button>
+          </article>
+
+          <article class="test-card">
+            <div class="test-tag">Diabetes care</div>
+            <h3>HbA1c (3‑Month Sugar)</h3>
+            <p>Average blood glucose control over the last 3 months for better diabetes management.</p>
+            <div class="test-meta">
+              <span>Sample: Whole blood</span>
+              <span>Report: Same day</span>
+            </div>
+            <button class="btn btn-outline test-details-btn" data-test-id="hba1c">
+              View details &amp; pricing
+            </button>
+          </article>
+
+          <article class="test-card">
+            <div class="test-tag">Thyroid</div>
+            <h3>Thyroid Profile (T3, T4, TSH)</h3>
+            <p>Comprehensive evaluation of thyroid function to assess hypo or hyperthyroidism.</p>
+            <div class="test-meta">
+              <span>Sample: Serum</span>
+              <span>Report: 24 hrs</span>
+            </div>
+            <button class="btn btn-outline test-details-btn" data-test-id="thyroid">
+              View details &amp; pricing
+            </button>
+          </article>
+
+          <article class="test-card">
+            <div class="test-tag">Liver health</div>
+            <h3>Liver Function Test (LFT)</h3>
+            <p>Assesses liver enzymes, proteins, and bilirubin to evaluate liver health and damage.</p>
+            <div class="test-meta">
+              <span>Sample: Serum</span>
+              <span>Report: 24 hrs</span>
+            </div>
+            <button class="btn btn-outline test-details-btn" data-test-id="lft">
+              View details &amp; pricing
+            </button>
+          </article>
+
+          <article class="test-card">
+            <div class="test-tag">Heart &amp; cholesterol</div>
+            <h3>Lipid Profile</h3>
+            <p>Measures good and bad cholesterol and triglycerides to assess cardiac risk.</p>
+            <div class="test-meta">
+              <span>Sample: Serum</span>
+              <span>Report: 12–24 hrs</span>
+            </div>
+            <button class="btn btn-outline test-details-btn" data-test-id="lipid">
+              View details &amp; pricing
+            </button>
+          </article>
+
+          <article class="test-card">
+            <div class="test-tag">Vitamin</div>
+            <h3>Vitamin D (25‑OH)</h3>
+            <p>Checks Vitamin D levels linked to bone strength, immunity, and fatigue.</p>
+            <div class="test-meta">
+              <span>Sample: Serum</span>
+              <span>Report: 24–36 hrs</span>
+            </div>
+            <button class="btn btn-outline test-details-btn" data-test-id="vitd">
+              View details &amp; pricing
+            </button>
+          </article>
         </div>
       </div>
     </div>
@@ -399,6 +507,42 @@
 
   <!-- Back to top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Test Details Modal -->
+  <div class="test-modal-backdrop" id="testModal" aria-hidden="true">
+    <div class="test-modal" role="dialog" aria-modal="true" aria-labelledby="testModalTitle">
+      <button class="test-modal-close" id="testModalClose" aria-label="Close details">&times;</button>
+      <div class="test-modal-header">
+        <div>
+          <h3 id="testModalTitle"></h3>
+          <p id="testModalSubtitle" class="test-modal-subtitle"></p>
+        </div>
+        <span class="test-modal-tag" id="testModalCategory"></span>
+      </div>
+      <p id="testModalDescription" class="test-modal-description"></p>
+      <div class="test-modal-content">
+        <div class="test-modal-info">
+          <ul>
+            <li><strong>Sample type:</strong> <span id="testModalSample"></span></li>
+            <li><strong>Fasting required:</strong> <span id="testModalFasting"></span></li>
+            <li><strong>Ideal for:</strong> <span id="testModalIdealFor"></span></li>
+            <li><strong>Reporting time:</strong> <span id="testModalTat"></span></li>
+            <li><strong>Preparation tips:</strong> <span id="testModalPrep"></span></li>
+          </ul>
+        </div>
+        <div class="test-modal-pricing">
+          <div class="test-modal-price-label">Current price</div>
+          <div class="test-modal-price" id="testModalPrice"></div>
+          <div class="test-modal-disclaimer">
+            Pricing is indicative and shown in INR (₹). Final charges may vary based on panels and offers.
+          </div>
+          <a href="tel:+919226837873" class="btn btn-primary test-modal-cta">
+            Call to book this test
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
