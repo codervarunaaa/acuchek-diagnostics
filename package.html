@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View detailed information about curated health check packages at Acuchek Diagnostics." />
+  <title>Acuchek Diagnostics | Package Details</title>
+  <link rel="icon" href="assets/icon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="has-promo">
+
+  <!-- Women’s Day banner reused -->
+  <div class="promo-banner promo-banner-womens" id="womensDayBanner">
+    <div class="container">
+      <div class="promo-banner-left">
+        <span class="promo-pill">Women’s Day Offer</span>
+        <div class="promo-marquee">
+          <div class="promo-marquee-track">
+            <span class="promo-marquee-item">25% off on women’s health packages</span>
+            <span class="promo-marquee-item">Free home sample collection* for morning slots</span>
+            <span class="promo-marquee-item">Friendly, doctor‑led review of every report</span>
+            <span class="promo-marquee-item">25% off on women’s health packages</span>
+            <span class="promo-marquee-item">Free home sample collection* for morning slots</span>
+            <span class="promo-marquee-item">Friendly, doctor‑led review of every report</span>
+          </div>
+        </div>
+      </div>
+      <a href="index.html#packages" class="promo-banner-cta">
+        Back to packages
+      </a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html#hero" class="nav-brand">
+        <img src="assets/logo.png" alt="Acuchek Diagnostics Logo" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Acuchek Diagnostics</span>
+          <span class="nav-brand-tagline">Precision • Accuracy • Ethics</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#packages">Packages</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#tests">Lab Tests</a>
+        <a href="index.html#features">Why Us</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="tel:+919226837873" class="nav-cta">Book a Test</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Package detail content -->
+  <main class="package-detail-page">
+    <section class="package-detail-hero fade-up">
+      <div class="container">
+        <a href="index.html#packages" class="package-back-link">← Back to all packages</a>
+        <div class="package-detail-header">
+          <div class="package-detail-label" id="packageGroupLabel"></div>
+          <h1 id="packageTitle">Package title</h1>
+          <p id="packageSubtitle" class="package-detail-subtitle"></p>
+          <div class="package-detail-meta">
+            <span id="packageTestsCount"></span>
+            <span id="packageFasting"></span>
+            <span id="packageReporting"></span>
+          </div>
+          <div class="package-detail-pricing">
+            <div>
+              <div class="price-label">Indicative price</div>
+              <div class="price-value" id="packagePrice"></div>
+              <div class="price-note">*Final pricing may vary based on offers and add‑ons.</div>
+            </div>
+            <div class="package-detail-cta">
+              <a href="tel:+919226837873" class="btn btn-primary">Call to book package</a>
+              <a
+                href="https://wa.me/919226837873?text=Hi%2C%20I%27d%20like%20to%20book%20a%20health%20package%20at%20Acuchek%20Diagnostics."
+                class="btn btn-outline btn-whatsapp"
+                target="_blank"
+                rel="noopener"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="package-detail-content">
+      <div class="container">
+        <div class="package-detail-grid">
+          <div class="package-primary">
+            <div class="package-summary-card">
+              <h2>What this package covers</h2>
+              <p id="packageOverview"></p>
+            </div>
+
+            <div class="package-accordion">
+              <details open>
+                <summary>Tests &amp; profiles included</summary>
+                <ul id="packageTestsList"></ul>
+              </details>
+              <details>
+                <summary>Preparation &amp; fasting instructions</summary>
+                <p id="packagePrep"></p>
+              </details>
+              <details>
+                <summary>Who should consider this package?</summary>
+                <p id="packageIdealFor"></p>
+              </details>
+              <details>
+                <summary>Reporting time &amp; follow‑up</summary>
+                <p id="packageReportingDetail"></p>
+              </details>
+            </div>
+          </div>
+
+          <aside class="package-side-card">
+            <h3>Need help choosing?</h3>
+            <p>
+              Not sure if this is the right package? Our team can guide you based on age, symptoms and doctor’s advice.
+            </p>
+            <ul class="package-help-list">
+              <li>Share your prescription on WhatsApp</li>
+              <li>Discuss fasting requirements</li>
+              <li>Schedule convenient sample collection</li>
+            </ul>
+            <a
+              href="https://wa.me/919226837873?text=Hi%2C%20I%20need%20help%20selecting%20a%20health%20package%20at%20Acuchek%20Diagnostics."
+              class="btn btn-primary btn-whatsapp"
+              target="_blank"
+              rel="noopener"
+            >
+              Chat with our team
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reuse footer + utilities from main page -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-name">Acuchek Diagnostics</div>
+          <div class="footer-brand-tagline">Precision • Accuracy • Ethics</div>
+          <p>Your trusted partner for accurate, timely, and reliable diagnostic testing in Pune.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📸</a>
+            <a
+              href="https://wa.me/919226837873?text=Hi%2C%20I%27d%20like%20to%20book%20a%20lab%20test%20at%20Acuchek%20Diagnostics."
+              target="_blank"
+              rel="noopener"
+              aria-label="Chat on WhatsApp with Acuchek Diagnostics"
+            >
+              <svg class="icon-whatsapp" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a9 9 0 0 0-9 9c0 1.6.4 3.1 1.2 4.4L3 21l4.7-1.2A9 9 0 1 0 12 3z"></path>
+                <path d="M9.5 9.5c.2-.4.3-.6.6-.6h.4c.2 0 .3 0 .4.3l.4 1c.1.2.1.3 0 .5l-.3.4c-.1.1-.1.3 0 .4a5.7 5.7 0 0 0 2.3 2.3c.1.1.3.1.4 0l.4-.3c.2-.1.3-.1.5 0l1 .4c.3.1.3.2.3.4v.4c0 .3-.2.5-.6.6-.3.1-.8.2-1.3.2-.8 0-1.5-.2-2.2-.5a6.7 6.7 0 0 1-2-1.3 6.6 6.6 0 0 1-1.3-2c-.3-.7-.5-1.4-.5-2.2 0-.5.1-1 .2-1.3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#packages">Packages</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#features">Why Choose Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Top Services</h4>
+          <ul>
+            <li><a href="index.html#services">Biochemistry</a></li>
+            <li><a href="index.html#services">Hematology</a></li>
+            <li><a href="index.html#services">Cancer Markers</a></li>
+            <li><a href="index.html#services">Hormone Assays</a></li>
+            <li><a href="index.html#services">ECG Testing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919226837873">+91 92268 37873</a></li>
+            <li><a href="mailto:acuchekdiagnostics@gmail.com">acuchekdiagnostics@gmail.com</a></li>
+            <li><a href="index.html#contact">Erandwane, Pune</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Acuchek Diagnostics. All rights reserved.</span>
+        <span>Designed with care for your health.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    href="https://wa.me/919226837873?text=Hi%2C%20I%27d%20like%20to%20book%20a%20lab%20test%20at%20Acuchek%20Diagnostics."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat on WhatsApp with Acuchek Diagnostics"
+  >
+    <svg class="icon-whatsapp" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3a9 9 0 0 0-9 9c0 1.6.4 3.1 1.2 4.4L3 21l4.7-1.2A9 9 0 1 0 12 3z"></path>
+      <path d="M9.5 9.5c.2-.4.3-.6.6-.6h.4c.2 0 .3 0 .4.3l.4 1c.1.2.1.3 0 .5l-.3.4c-.1.1-.1.3 0 .4a5.7 5.7 0 0 0 2.3 2.3c.1.1.3.1.4 0l.4-.3c.2-.1.3-.1.5 0l1 .4c.3.1.3.2.3.4v.4c0 .3-.2.5-.6.6-.3.1-.8.2-1.3.2-.8 0-1.5-.2-2.2-.5a6.7 6.7 0 0 1-2-1.3 6.6 6.6 0 0 1-1.3-2c-.3-.7-.5-1.4-.5-2.2 0-.5.1-1 .2-1.3z"></path>
+    </svg>
+  </a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    // Package details data and loader
+    const PACKAGE_DETAILS = {
+      'mens-basic': {
+        title: "Men’s Basic Health Check",
+        groupLabel: "Mens • Basic",
+        subtitle: "Entry‑level wellness panel covering key blood, sugar, lipid and organ health markers.",
+        testsCount: "Approx. 12 tests & profiles",
+        fasting: "Fasting: 10–12 hours recommended",
+        reporting: "Reports: Usually within 24 hours",
+        price: "₹ 1,499 – ₹ 1,899",
+        overview: "Ideal starter package for adult men wanting a quick snapshot of overall health, including anemia, sugar control, liver, kidney and cholesterol status.",
+        tests: [
+          "Complete Blood Count (CBC)",
+          "Fasting Blood Sugar",
+          "Lipid Profile (basic)",
+          "Liver Function Test (LFT) – selected parameters",
+          "Kidney Function Test (KFT) – selected parameters",
+          "Urine Routine",
+        ],
+        preparation: "Overnight fasting of 10–12 hours with only water allowed is recommended. Avoid heavy, oily meals and alcohol the previous night. Regular medicines can usually be taken as advised by your doctor.",
+        idealFor: "Adult men (18+ years) planning an annual health review, those with sedentary lifestyles, borderline sugar or cholesterol, or family history of lifestyle diseases.",
+        reportingDetail: "Most reports are available within 24 hours. Follow‑up consultation with your doctor is recommended to interpret results and plan lifestyle or treatment changes."
+      },
+      'mens-advanced': {
+        title: "Men’s Advanced Full Body Check",
+        groupLabel: "Mens • Advanced",
+        subtitle: "Comprehensive full‑body evaluation including cardiac risk, vitamins and hormone markers.",
+        testsCount: "22+ tests & profiles",
+        fasting: "Fasting: 10–12 hours strongly recommended",
+        reporting: "Reports: 24–36 hours",
+        price: "₹ 3,299 – ₹ 3,999",
+        overview: "An in‑depth package designed for men above 30 or those at higher risk, combining routine health checks with cardiac, vitamin and hormone markers.",
+        tests: [
+          "CBC with ESR",
+          "Fasting & Post‑prandial Blood Sugar / HbA1c",
+          "Comprehensive Lipid Profile",
+          "Liver Function Test (complete)",
+          "Kidney Function Test (complete)",
+          "Thyroid Profile (T3, T4, TSH)",
+          "Vitamin D (25‑OH) and Vitamin B12",
+          "Baseline Testosterone (as advised)",
+          "Urine Routine"
+        ],
+        preparation: "Overnight fasting of 10–12 hours with only water allowed. Avoid alcohol for at least 24 hours. Inform the team about ongoing medications (especially thyroid, cardiac or hormonal drugs) so sample timing can be optimised.",
+        idealFor: "Men above 30 years, those with diabetes, hypertension, obesity, high stress or strong family history of heart disease or metabolic syndrome.",
+        reportingDetail: "Key reports are generally available within 24–36 hours. Depending on doctor advice, repeat testing or further cardiac evaluation may be suggested."
+      },
+      'womens-wellness': {
+        title: "Women’s Wellness Check",
+        groupLabel: "Womens • Wellness",
+        subtitle: "Core wellness package focusing on anemia, thyroid, vitamins and organ health for women.",
+        testsCount: "15+ tests & profiles",
+        fasting: "Fasting: 8–10 hours preferred",
+        reporting: "Reports: 24–36 hours",
+        price: "₹ 1,899 – ₹ 2,299",
+        overview: "A balanced wellness panel for women that checks for common concerns like anemia, thyroid imbalance, Vitamin D/B12 deficiency and metabolic health.",
+        tests: [
+          "CBC with ESR",
+          "Thyroid Profile (T3, T4, TSH)",
+          "Vitamin D (25‑OH)",
+          "Vitamin B12",
+          "Fasting Blood Sugar",
+          "Lipid Profile (basic)",
+          "LFT & KFT (selected parameters)",
+          "Urine Routine"
+        ],
+        preparation: "Prefer 8–10 hours of fasting with only water allowed. Avoid taking vitamin supplements on the morning of the test. If pregnant or breastfeeding, inform the team and your doctor.",
+        idealFor: "Adult women (18+ years), especially those with fatigue, hair fall, weight changes, menstrual irregularities or planning an annual health review.",
+        reportingDetail: "Most parameters are reported within 24–36 hours. Your doctor may correlate results with clinical symptoms and, if required, advise further hormone or imaging studies."
+      },
+      'womens-hormonal': {
+        title: "Women’s Hormonal Balance Panel",
+        groupLabel: "Womens • Hormonal",
+        subtitle: "Focused hormone profile to evaluate PCOS, menstrual irregularities and fertility‑related concerns.",
+        testsCount: "Targeted hormone panel",
+        fasting: "Fasting: As advised by doctor",
+        reporting: "Reports: 3–4 working days (for certain hormones)",
+        price: "₹ 2,499 – ₹ 3,299",
+        overview: "A specialised set of hormone tests recommended by gynaecologists/endocrinologists to evaluate menstrual cycle issues, suspected PCOS and fertility planning.",
+        tests: [
+          "FSH, LH and Prolactin",
+          "TSH (with T3, T4 as advised)",
+          "Total Testosterone",
+          "Estradiol (E2) / Progesterone (cycle‑specific)",
+          "Additional hormones as per prescription"
+        ],
+        preparation: "Sample collection is best timed as per your doctor’s advice (specific day of cycle). Inform about all current medicines, especially hormonal pills or thyroid medications.",
+        idealFor: "Women with irregular cycles, difficulty conceiving, excessive hair growth/acne, or those on treatment for PCOS or other hormonal disorders.",
+        reportingDetail: "Most hormone reports are available within 3–4 working days. Interpretation should be done by your treating specialist, often along with ultrasound or clinical examination."
+      },
+      'cardiac-screening': {
+        title: "Cardiac Risk Screening",
+        groupLabel: "Cardiac • Screening",
+        subtitle: "Starter cardiac risk panel combining cholesterol, sugar and ECG.",
+        testsCount: "Core cardiac markers",
+        fasting: "Fasting: 12 hours strongly recommended",
+        reporting: "Reports: 24 hours (ECG same day)",
+        price: "₹ 1,999 – ₹ 2,499",
+        overview: "An early‑warning panel to estimate risk of heart disease using cholesterol profile, sugar levels and ECG rhythm assessment.",
+        tests: [
+          "Fasting Blood Sugar",
+          "Lipid Profile (detailed)",
+          "Resting ECG",
+          "Blood Pressure recording (at centre)"
+        ],
+        preparation: "Fast for 12 hours with only water allowed. Avoid smoking and caffeine on the morning of the test. Wear comfortable clothing for ECG.",
+        idealFor: "Adults with a family history of heart disease, smokers, diabetics, hypertensives or individuals beginning an exercise programme.",
+        reportingDetail: "Biochemistry results are usually ready within 24 hours, while ECG is available the same day. Abnormal findings should be reviewed with a physician/cardiologist."
+      },
+      'cardiac-complete': {
+        title: "Comprehensive Cardiac Profile",
+        groupLabel: "Cardiac • Complete",
+        subtitle: "Expanded cardiac profile with advanced lipids, sugar control and cardiac enzymes.",
+        testsCount: "Expanded cardiac panel",
+        fasting: "Fasting: 12 hours strongly recommended",
+        reporting: "Reports: 24–48 hours",
+        price: "₹ 4,499 – ₹ 5,499",
+        overview: "A detailed package for high‑risk individuals that combines advanced lipid markers, long‑term sugar control and cardiac enzyme assessment.",
+        tests: [
+          "Comprehensive Lipid Profile",
+          "Fasting Blood Sugar and HbA1c",
+          "High‑sensitivity CRP (hs‑CRP) / Other markers as advised",
+          "Resting ECG",
+          "Additional cardiac enzymes as per prescription"
+        ],
+        preparation: "12‑hour fasting with only water is recommended. Avoid alcohol and heavy fatty meals for at least 24 hours. Inform the team about cardiac medications and blood thinners.",
+        idealFor: "Individuals with known heart disease, diabetes, multiple risk factors (smoking, obesity, hypertension) or those undergoing regular cardiac follow‑up.",
+        reportingDetail: "Most parameters are reported within 24–48 hours. Your cardiologist/physician will correlate results with clinical findings and may advise further imaging or stress testing."
+      }
+    };
+
+    (function loadPackageDetails() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const data = id && PACKAGE_DETAILS[id];
+
+      if (!data) {
+        document.getElementById('packageTitle').textContent = 'Package not found';
+        document.getElementById('packageSubtitle').textContent = 'The selected package could not be located. Please return to the packages page.';
+        document.getElementById('packageOverview').textContent = 'Use the back button above to choose from the available medical packages.';
+        document.getElementById('packagePrice').textContent = '—';
+        document.getElementById('packageGroupLabel').textContent = '';
+        document.getElementById('packageTestsCount').textContent = '';
+        document.getElementById('packageFasting').textContent = '';
+        document.getElementById('packageReporting').textContent = '';
+        return;
+      }
+
+      document.getElementById('packageTitle').textContent = data.title;
+      document.getElementById('packageGroupLabel').textContent = data.groupLabel;
+      document.getElementById('packageSubtitle').textContent = data.subtitle;
+      document.getElementById('packageTestsCount').textContent = data.testsCount;
+      document.getElementById('packageFasting').textContent = data.fasting;
+      document.getElementById('packageReporting').textContent = data.reporting;
+      document.getElementById('packagePrice').textContent = data.price;
+      document.getElementById('packageOverview').textContent = data.overview;
+      document.getElementById('packagePrep').textContent = data.preparation;
+      document.getElementById('packageIdealFor').textContent = data.idealFor;
+      document.getElementById('packageReportingDetail').textContent = data.reportingDetail;
+
+      const testsList = document.getElementById('packageTestsList');
+      testsList.innerHTML = '';
+      data.tests.forEach((t) => {
+        const li = document.createElement('li');
+        li.textContent = t;
+        testsList.appendChild(li);
+      });
+    })();
+  </script>
+</body>
+</html>
+

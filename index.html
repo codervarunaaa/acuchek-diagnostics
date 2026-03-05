@@ -8,7 +8,29 @@
   <link rel="icon" href="assets/icon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="has-promo">
+
+  <!-- ========== WOMEN'S DAY BANNER ========== -->
+  <div class="promo-banner promo-banner-womens" id="womensDayBanner">
+    <div class="container">
+      <div class="promo-banner-left">
+        <span class="promo-pill">Women’s Day Offer</span>
+        <div class="promo-marquee">
+          <div class="promo-marquee-track">
+            <span class="promo-marquee-item">25% off on women’s health packages</span>
+            <span class="promo-marquee-item">Free home sample collection* for morning slots</span>
+            <span class="promo-marquee-item">Friendly, doctor‑led review of every report</span>
+            <span class="promo-marquee-item">25% off on women’s health packages</span>
+            <span class="promo-marquee-item">Free home sample collection* for morning slots</span>
+            <span class="promo-marquee-item">Friendly, doctor‑led review of every report</span>
+          </div>
+        </div>
+      </div>
+      <a href="#packages" class="promo-banner-cta">
+        View women’s packages
+      </a>
+    </div>
+  </div>
 
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar" id="navbar">
@@ -21,6 +43,7 @@
         </div>
       </a>
       <div class="nav-links" id="navLinks">
+        <a href="#packages">Packages</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#tests">Lab Tests</a>
@@ -44,7 +67,7 @@
         </div>
         <h1>Accurate Diagnostics<br/>for <span>Better Health</span></h1>
         <p class="hero-description">
-          State-of-the-art laboratory powered by fully automated analyzers and validated by qualified pathologists — delivering precise, reliable results you can trust.
+          We’re a neighbourhood lab in Erandwane, run by doctors who double‑check every report so you and your family feel safe, heard, and well taken care of.
         </p>
         <div class="hero-buttons">
           <a href="tel:+919226837873" class="btn btn-primary">
@@ -104,6 +127,149 @@
             <span class="specialty-tag">ECG</span>
             <span class="specialty-tag">Uroflowmetry</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MEDICAL PACKAGES ========== -->
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Health Packages</span>
+        <h2 class="section-title">Health checks for real life</h2>
+        <p class="section-subtitle">
+          Simple, no‑jargon packages for men, women and heart health. Pick what feels right today — we’ll help you with the rest.
+        </p>
+      </div>
+
+      <div class="packages-layout fade-up">
+        <div class="package-tabs" role="tablist" aria-label="Package categories">
+          <button class="package-tab active" data-group="mens" role="tab" aria-selected="true">
+            <span class="package-tab-circle mens">👨</span>
+            <span class="package-tab-label">Mens</span>
+          </button>
+          <button class="package-tab" data-group="womens" role="tab" aria-selected="false">
+            <span class="package-tab-circle womens">👩</span>
+            <span class="package-tab-label">Womens</span>
+          </button>
+          <button class="package-tab" data-group="cardiac" role="tab" aria-selected="false">
+            <span class="package-tab-circle cardiac">❤️</span>
+            <span class="package-tab-label">Cardiac</span>
+          </button>
+        </div>
+
+        <div class="package-list" id="packageList">
+          <!-- Mens packages -->
+          <article class="package-card" data-group="mens">
+            <div class="package-card-header">
+              <span class="package-chip">MEN • BASIC</span>
+              <h3>Men’s Basic Health Check</h3>
+              <p>A simple “annual check” for working men — sugar, cholesterol, liver, kidney and basic blood counts.</p>
+            </div>
+            <div class="package-card-meta">
+              <span>12 tests &amp; profiles</span>
+              <span>Fasting: 10–12 hours</span>
+            </div>
+            <div class="package-card-footer">
+              <span class="package-price">From ₹ 1,499</span>
+              <a href="package.html?id=mens-basic" class="btn btn-primary btn-sm">
+                View package details
+              </a>
+            </div>
+          </article>
+
+          <article class="package-card" data-group="mens">
+            <div class="package-card-header">
+              <span class="package-chip">MEN • ADVANCED</span>
+              <h3>Men’s Advanced Full Body Check</h3>
+              <p>For men who want to go deeper — heart risk, vitamins and hormones along with all routine tests.</p>
+            </div>
+            <div class="package-card-meta">
+              <span>22+ tests &amp; profiles</span>
+              <span>Fasting: 10–12 hours</span>
+            </div>
+            <div class="package-card-footer">
+              <span class="package-price">From ₹ 3,299</span>
+              <a href="package.html?id=mens-advanced" class="btn btn-primary btn-sm">
+                View package details
+              </a>
+            </div>
+          </article>
+
+          <!-- Womens packages -->
+          <article class="package-card" data-group="womens">
+            <div class="package-card-header">
+              <span class="package-chip">WOMEN • WELLNESS</span>
+              <h3>Women’s Wellness Check</h3>
+              <p>Checks common concerns like tiredness, hair fall and low immunity with thyroid, anemia and vitamin tests.</p>
+            </div>
+            <div class="package-card-meta">
+              <span>15+ tests &amp; profiles</span>
+              <span>Fasting: 8–10 hours</span>
+            </div>
+            <div class="package-card-footer">
+              <span class="package-price">From ₹ 1,899</span>
+              <a href="package.html?id=womens-wellness" class="btn btn-primary btn-sm">
+                View package details
+              </a>
+            </div>
+          </article>
+
+          <article class="package-card" data-group="womens">
+            <div class="package-card-header">
+              <span class="package-chip">WOMEN • HORMONAL</span>
+              <h3>Women’s Hormonal Balance Panel</h3>
+              <p>Helps your gynaecologist understand PCOS, irregular periods and fertility‑related questions.</p>
+            </div>
+            <div class="package-card-meta">
+              <span>Targeted hormone panel</span>
+              <span>Fasting: As advised</span>
+            </div>
+            <div class="package-card-footer">
+              <span class="package-price">From ₹ 2,499</span>
+              <a href="package.html?id=womens-hormonal" class="btn btn-primary btn-sm">
+                View package details
+              </a>
+            </div>
+          </article>
+
+          <!-- Cardiac packages -->
+          <article class="package-card" data-group="cardiac">
+            <div class="package-card-header">
+              <span class="package-chip">CARDIAC • SCREENING</span>
+              <h3>Cardiac Risk Screening</h3>
+              <p>Basic heart check with cholesterol, fasting sugar and ECG for an early heads‑up.</p>
+            </div>
+            <div class="package-card-meta">
+              <span>Core cardiac markers</span>
+              <span>Fasting: 12 hours</span>
+            </div>
+            <div class="package-card-footer">
+              <span class="package-price">From ₹ 1,999</span>
+              <a href="package.html?id=cardiac-screening" class="btn btn-primary btn-sm">
+                View package details
+              </a>
+            </div>
+          </article>
+
+          <article class="package-card" data-group="cardiac">
+            <div class="package-card-header">
+              <span class="package-chip">CARDIAC • COMPLETE</span>
+              <h3>Comprehensive Cardiac Profile</h3>
+              <p>For high‑risk hearts — detailed lipids, sugar control and cardiac markers along with ECG.</p>
+            </div>
+            <div class="package-card-meta">
+              <span>Expanded cardiac panel</span>
+              <span>Fasting: 12 hours</span>
+            </div>
+            <div class="package-card-footer">
+              <span class="package-price">From ₹ 4,499</span>
+              <a href="package.html?id=cardiac-complete" class="btn btn-primary btn-sm">
+                View package details
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -488,6 +654,31 @@
     </div>
   </section>
 
+  <!-- ========== WOMEN'S DAY ENTRY MODAL ========== -->
+  <div class="offer-modal-backdrop" id="womensOfferModal" aria-hidden="true">
+    <div class="offer-modal" role="dialog" aria-modal="true" aria-labelledby="womensOfferTitle">
+      <button class="offer-modal-close" id="womensOfferClose" aria-label="Close women’s day offer">&times;</button>
+      <span class="offer-modal-pill">Women’s Day Special</span>
+      <h2 id="womensOfferTitle">A little extra care for her</h2>
+      <p>
+        This week, we’re running a gentle Women’s Day offer on our women’s health packages.
+      </p>
+      <ul class="offer-modal-list">
+        <li>25% off on Women’s Wellness &amp; Hormonal packages</li>
+        <li>Free home sample pick‑up for morning slots*</li>
+        <li>Reports explained in simple language by our team</li>
+      </ul>
+      <div class="offer-modal-actions">
+        <a href="#packages" class="btn btn-primary btn-sm" id="womensOfferView">
+          See women’s packages
+        </a>
+        <button class="btn btn-outline btn-sm" id="womensOfferLater">
+          Maybe later
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
@@ -516,6 +707,7 @@
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#hero">Home</a></li>
+            <li><a href="#packages">Packages</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#features">Why Choose Us</a></li>

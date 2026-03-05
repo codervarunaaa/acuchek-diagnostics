@@ -108,15 +108,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Trigger counters when hero is visible
+  // Trigger counters when hero is visible (guard for pages without hero)
   const heroSection = document.getElementById('hero');
-  const statObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      animateCounters();
-      statObserver.unobserve(heroSection);
-    }
-  }, { threshold: 0.3 });
-  statObserver.observe(heroSection);
+  if (heroSection && statNumbers.length) {
+    const statObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        statObserver.unobserve(heroSection);
+      }
+    }, { threshold: 0.3 });
+    statObserver.observe(heroSection);
+  }
 
   // ---------- Back to top ----------
   const backToTop = document.getElementById('backToTop');
@@ -144,6 +146,90 @@ document.addEventListener('DOMContentLoaded', () => {
       a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
   }, { passive: true });
+
+  // ---------- Package group tabs ----------
+  const packageTabs = document.querySelectorAll('.package-tab');
+  const packageCards = document.querySelectorAll('.package-card');
+
+  if (packageTabs.length && packageCards.length) {
+    const setActiveGroup = (group) => {
+      packageTabs.forEach((tab) => {
+        const isActive = tab.getAttribute('data-group') === group;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      packageCards.forEach((card) => {
+        const matches = card.getAttribute('data-group') === group;
+        card.style.display = matches ? '' : 'none';
+      });
+    };
+
+    const initialGroup = packageTabs[0].getAttribute('data-group');
+    setActiveGroup(initialGroup);
+
+    packageTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const group = tab.getAttribute('data-group');
+        if (!group) return;
+        setActiveGroup(group);
+      });
+    });
+  }
+
+  // ---------- Women’s Day entry modal ----------
+  const womensOfferModal = document.getElementById('womensOfferModal');
+  if (womensOfferModal) {
+    const womensOfferClose = document.getElementById('womensOfferClose');
+    const womensOfferView = document.getElementById('womensOfferView');
+    const womensOfferLater = document.getElementById('womensOfferLater');
+
+    const openWomensOffer = () => {
+      womensOfferModal.classList.add('open');
+      womensOfferModal.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeWomensOffer = () => {
+      womensOfferModal.classList.remove('open');
+      womensOfferModal.setAttribute('aria-hidden', 'true');
+      try {
+        sessionStorage.setItem('womensOfferSeen', 'true');
+      } catch (_) {
+        // ignore storage errors
+      }
+    };
+
+    // Show once per session
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem('womensOfferSeen') === 'true';
+    } catch (_) {
+      seen = false;
+    }
+
+    if (!seen) {
+      setTimeout(openWomensOffer, 800);
+    }
+
+    womensOfferClose?.addEventListener('click', closeWomensOffer);
+    womensOfferLater?.addEventListener('click', closeWomensOffer);
+
+    womensOfferView?.addEventListener('click', () => {
+      closeWomensOffer();
+    });
+
+    womensOfferModal.addEventListener('click', (e) => {
+      if (e.target === womensOfferModal) {
+        closeWomensOffer();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && womensOfferModal.classList.contains('open')) {
+        closeWomensOffer();
+      }
+    });
+  }
 
   // ---------- Test details modal ----------
   const TEST_DETAILS = {
