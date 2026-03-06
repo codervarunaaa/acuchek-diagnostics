@@ -8,11 +8,11 @@
 /* ---------- CSS Variables ---------- */
 :root {
     /* Core brand palette (updated to blue theme) */
-    --primary: #4A90E2;
-    --primary-soft: #E8F2FF;
-    --primary-strong: #3B7BC9;
-    --primary-deep: #2E5C8A;
-    --accent-warm: #F5A623;
+    --primary: #A8F1FF;
+    --primary-soft: #D9F8FF;
+    --primary-strong: #6FE6FC;
+    --primary-deep: #4ED7F1;
+    --accent-warm: #FFFA8D;
 
     /* Pink accent for offers (e.g. Women’s Day) */
     --pink-accent: #FF6FB5;
@@ -24,18 +24,18 @@
     --sage-green-dark: var(--primary-strong);
     --teal: var(--primary-deep);
     --teal-light: var(--primary-strong);
-    --teal-dark: #2E5C8A;
-    --charcoal: #2C3E50;
-    --charcoal-light: #546E7A;
-    --charcoal-dark: #1A252F;
+    --teal-dark: #1C7FA1;
+    --charcoal: #2D3748;
+    --charcoal-light: #4A5568;
+    --charcoal-dark: #1A202C;
     --white: #FFFFFF;
-    --off-white: #F8FAFC;
-    --gray-100: #F0F4F7;
-    --gray-200: #D8E4F0;
-    --gray-300: #B0C4DE;
-    --text-primary: #1A252F;
-    --text-secondary: #445566;
-    --text-muted: #7A8B99;
+    --off-white: #F7FAFC;
+    --gray-100: #f0f4f3;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E0;
+    --text-primary: #2D3748;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
 
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -2078,25 +2078,11 @@ h3 {
     .promo-banner .container {
         flex-direction: column;
         align-items: flex-start;
-        width: 100vw;
-        box-sizing: border-box;
-        padding: 8px 8px;
-        margin: 0;
-    }
-
-    .promo-banner-left {
-        width: 100%;
-    }
-
-    .promo-marquee {
-        width: 100%;
     }
 
     .promo-banner-cta {
-        width: 100%;
+        align-self: stretch;
         justify-content: center;
-        margin-top: 8px;
-        padding: 8px 12px;
     }
 }
 
@@ -2160,18 +2146,15 @@ h3 {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100vw;
-        width: 100vw;
+        right: -100%;
+        width: 280px;
         height: 100vh;
         flex-direction: column;
         background: var(--charcoal-dark);
-        padding: 80px 16px 32px;
+        padding: 80px 32px 32px;
         gap: 20px;
         transition: right var(--transition);
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.25);
-        overflow-x: hidden;
-        overflow-y: auto;
-        z-index: 1500;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
     }
 
     .nav-links.open {
@@ -2179,22 +2162,12 @@ h3 {
     }
 
     .nav-links a {
-        color: rgba(255, 255, 255, 0.95) !important;
+        color: rgba(255, 255, 255, 0.8) !important;
         font-size: 1rem;
-        width: 100%;
-        text-align: left;
-        padding: 10px 8px;
-        border-radius: var(--radius-sm);
-        transition: background var(--transition);
-    }
-
-    .nav-links a:active {
-        background: rgba(255, 255, 255, 0.1);
     }
 
     .nav-links a:hover {
         color: var(--sage-green) !important;
-        background: rgba(255, 255, 255, 0.08);
     }
 
     .nav-toggle {
@@ -2209,39 +2182,13 @@ h3 {
         grid-template-columns: 1fr;
     }
 
-    .test-modal,
-    .offer-modal {
-        max-width: 95vw;
-        width: 100vw;
-        padding: 16px 8px 14px;
-        margin: 0;
-        box-sizing: border-box;
-        left: 0;
-        right: 0;
+    .test-modal {
+        max-width: 95%;
+        padding: 22px 18px 20px;
     }
 
-    .test-modal-close,
-    .offer-modal-close {
-        top: 8px;
-        right: 8px;
-        font-size: 1.2rem;
-    }
-
-    .test-modal-content,
-    .offer-modal-content {
+    .test-modal-content {
         grid-template-columns: 1fr;
-    }
-
-    .test-modal-header {
-        flex-direction: column;
-    }
-
-    .test-modal-info ul {
-        font-size: 0.78rem;
-    }
-
-    .test-modal-pricing {
-        padding: 12px 10px;
     }
 
     .hero-stats {
@@ -2264,18 +2211,11 @@ h3 {
     }
 
     .whatsapp-float {
-        bottom: 100px;
-        right: 16px;
-        width: 48px;
-        height: 48px;
-        font-size: 1.4rem;
-    }
-
-    .back-to-top {
-        bottom: 20px;
-        right: 16px;
-        width: 44px;
-        height: 44px;
+        bottom: 90px;
+        right: 20px;
+        width: 46px;
+        height: 46px;
+        font-size: 1.3rem;
     }
 }
 
@@ -2294,7 +2234,3 @@ h3 {
         align-items: center;
     }
 }
-
-
-
-
